@@ -40,3 +40,81 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// my work starts here:
+
+// nav items
+let aTags = document.querySelectorAll('a');
+
+aTags[0].setAttribute('class', '.nav-item-1')
+aTags[0].innerText = 'Services'
+aTags[1].setAttribute('class', '.nav-item-2')
+aTags[1].innerText = 'Product'
+aTags[2].setAttribute('class', '.nav-item-3')
+aTags[2].innerText = 'Vision'
+aTags[3].setAttribute('class', '.nav-item-4')
+aTags[3].innerText = 'Features'
+aTags[4].setAttribute('class', '.nav-item-5')
+aTags[4].innerText = 'About'
+aTags[5].setAttribute('class', '.nav-item-6')
+aTags[5].innerText = 'Contact'
+
+aTags.forEach(link => link.style.color = 'green');
+// added navs
+const myATag1 = document.createElement('a');
+const mainNav = document.querySelector('nav');
+myATag1.innerText = 'Discover';
+myATag1.href = '#';
+mainNav.appendChild(myATag1);
+myATag1.style.color = 'green';
+
+const myATag2 = document.createElement('a');
+const mainNav2 = document.querySelector('nav');
+myATag2.innerText = 'Support';
+myATag2.href = '#';
+mainNav2.prepend(myATag2);
+myATag2.style.color = 'green';
+
+
+// header-img
+let logoImg = document.getElementById('logo-img');
+logoImg.src = "img/logo.png";
+
+// cta
+let ctaText = document.querySelector('h1');
+ctaText.textContent = siteContent['cta']['h1'];
+ctaText.style.color = "Navy";
+
+
+
+let ctaButton = document.querySelector('button');
+ctaButton.innerText = 'Get Started';
+let ctaImg = document.getElementById('cta-img');
+ctaImg.src = "img/header-img.png";
+// main-content
+let mainContent = document.querySelectorAll('.text-content');
+
+mainContent[0].querySelector('h4').textContent = siteContent['main-content']['features-h4']
+mainContent[0].querySelector('p').textContent = siteContent['main-content']['features-content']
+mainContent[1].querySelector('h4').textContent = siteContent['main-content']['about-h4']
+mainContent[1].querySelector('p').textContent = siteContent['main-content']['about-content']
+mainContent[2].querySelector('h4').textContent = siteContent['main-content']['services-h4']
+mainContent[2].querySelector('p').textContent = siteContent['main-content']['services-content']
+mainContent[3].querySelector('h4').textContent = siteContent['main-content']['product-h4']
+mainContent[3].querySelector('p').textContent = siteContent['main-content']['product-content']
+mainContent[4].querySelector('h4').textContent = siteContent['main-content']['vision-h4']
+mainContent[4].querySelector('p').textContent = siteContent['main-content']['vision-content']
+
+let middleImg = document.getElementById('middle-img')
+middleImg.src = "img/mid-page-accent.jpg"
+// contact
+let contact = document.querySelector('.contact');
+contact.getElementsByTagName('h4')[0].textContent = siteContent['contact']['contact-h4'];
+contact.getElementsByTagName('p')[0].textContent = siteContent['contact']['address'];
+contact.getElementsByTagName('p')[1].textContent = siteContent['contact']['phone'];
+contact.getElementsByTagName('p')[2].textContent = siteContent['contact']['email'];
+
+
+// footer
+let footer = document.getElementsByName('footer');
+footer.innerText = "Copyright Great Idea! 2018"
